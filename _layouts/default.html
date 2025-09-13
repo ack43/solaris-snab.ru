@@ -11,13 +11,18 @@
     {% if site.blocks.header %}
     {% include header.html %}
     {% endif %}
+
+    {% if site.blocks.cta %}
+    {% include cta.html %}
+    {% endif %}
+
     {% if site.blocks.about %}
     {% include about.html %}
     {% endif %}
 
     {% if site.blocks.reasons %}
     {% include reasons.html %}
-    {% include reasons-gpt.html %}
+    <!-- {% include reasons-gpt.html %} -->
     {% endif %}
 
 
@@ -41,10 +46,6 @@
     {% if site.blocks.contact %}
     {% if site.contact == "yandex" %}
     {% include yandex-form.html %}
-    {% elsif site.contact == "static" %}
-    {% include contact_static.html %}
-    {% elsif site.contact == "disqus" %}
-    {% include contact_disqus.html %}
     {% else %}
     {% include contact.html %}
     {% endif %}

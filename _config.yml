@@ -40,6 +40,7 @@ blocks:
   head: true
   nav: true
   header: false
+  cta: true
   about: true
   reasons: true
   pricing: true
@@ -58,20 +59,15 @@ blocks:
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  # primary: 18bc9c #80B3FF
-  # primary-rgb: "24,288,156" #"128,179,255"
-  # secondary: 2c3e50 #FD6E8A
-  # secondary-dark: 233140 #A2122F
-  ####
-  # primary: d4a017        # Golden oil tone
-  # primary-rgb: "212,160,23"
-  # secondary: 2c3e50      # Charcoal blue
-  # secondary-dark: 1f2a36 # Deep steel
-  ####
-  primary: 16a085        # Slightly darker teal
-  primary-rgb: "22,160,133"
-  secondary: 3b2f2f      # Dark oil brown
-  secondary-dark: 2a1f1f # Almost black brown
+  # Primary — brighter teal with energy
+  primary: 1abc9c
+  primary-rgb: "26,188,156"
+
+  # Secondary — lighter warm brown, not too heavy
+  secondary: 8e5c42
+
+  # Secondary-dark — contrast but not pure black
+  secondary-dark: 5c3b2b
 
 
 # Footer settings

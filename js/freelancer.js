@@ -26,10 +26,23 @@ $(function() {
     });
 });
 
-// Highlight the top nav as scrolling occurs
-$('body').scrollspy({
-    target: '.navbar-fixed-top'
-})
+///// SCROLLSPY /////
+function initScrollSpy() {
+    var navbarHeight = $('.navbar-fixed-top').outerHeight();
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: navbarHeight + 10
+    });
+}
+
+// Initialize
+initScrollSpy();
+
+// Update on resize
+$(window).on('resize', function () {
+    initScrollSpy();
+});
+/////////////////////////////////////////////////////////////////
 
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {

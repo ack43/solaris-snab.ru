@@ -1,7 +1,7 @@
-   <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- Brand and toggle -->
     <div class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -9,36 +9,26 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="phone-link navbar-text visible-xs-block phone-mobile" href="{{ site.phoneLink }}">
-        📞 {{ site.phone }}
+      <!-- Replace site title with logo image -->
+      <a class="navbar-brand" href="#page-top">
+        <img src="/assets/images/logo.png" alt="{{ site.title }}" style="height:40px;">
       </a>
-      <a class="navbar-brand" href="#page-top">{{ site.title }}</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Collapsible menu -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="hidden">
-          <a href="#page-top"></a>
-        </li>
-        <li class="page-scroll">
-          <a href="#page-top">О компании</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#pricing">Продукция</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#certificates">Сертификаты</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#contact">Контакты</a>
-        </li>
+        <li class="hidden"><a href="#page-top"></a></li>
+        <li class="page-scroll"><a href="#page-top">О компании</a></li>
+        <li class="page-scroll"><a href="#pricing">Продукция</a></li>
+        <li class="page-scroll"><a href="#contact">Контакты</a></li>
+        <li class="page-scroll"><a href="#certificates">Сертификаты</a></li>
       </ul>
-      <a class="phone-link navbar-text hidden-xs phone-desktop" href="{{ site.phoneLink }}">
+      
+      <!-- Phone link (one element only) -->
+      <a class="phone-link navbar-text phone-nav" href="{{ site.phoneLink }}">
         📞 {{ site.phone }}
       </a>
     </div>
-    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container-fluid -->
 </nav>
