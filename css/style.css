@@ -111,42 +111,6 @@ nav.navbar .navbar-nav {
 
 
 
-/* certificates */
-
-/* #certificates .grid {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-} */
-
-
-#certificates {
-  text-align: center;
-}
-
-.certificates-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  max-width: 1200px; /* max width for the whole row */
-  margin: 0 auto; /* center it */
-}
-
-.certificates-row .card {
-  flex: 1 1 250; /* min width per card */
-  max-width: 300px; /* prevent too large cards */
-  box-sizing: border-box;
-}
-
-.certificates-row img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-
-
 /* modals */
 #lightbox {
   position: fixed;

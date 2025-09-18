@@ -500,7 +500,7 @@ nav.navbar .phone-link:hover {
 }
 
 /* Collapse menu into hamburger when <1200px */
-@media (max-width: 1199px) {
+@media (max-width: 1000px) {
   /* .navbar-header .navbar-toggle {
     display: block;
   } */
@@ -579,11 +579,22 @@ nav.navbar .phone-link:hover {
 }
 
 /* Hamburger visible only when menu is collapsed <1200px */
-@media (max-width: 1199px) {
+@media (max-width: 1000px) {
   .navbar-toggle {
     display: block;
+    float: right;
   }
+  /* .navbar-nav {
+    display: none;
+  } */
 }
+
+/***********************************************************
+************************************************************
+************************************************************
+************************************************************
+************************************************************
+***********************************************************/
 
 
 /***** CTA ******/
@@ -591,6 +602,12 @@ nav.navbar .phone-link:hover {
   color:#ff8800;
   margin-top: 80px;
   height: calc(100vh - 80px); /* full-height hero effect */
+}
+@media screen and (max-width: 1000px) {
+  #fuel {
+    margin-top: 20px;
+    height: calc(100vh - 60px); /* full-height hero effect */
+  }
 }
 
 .fuel-block {
@@ -783,5 +800,67 @@ nav.navbar .phone-link:hover {
 /********************/
 #contact {
  width: 100%;
-  background-color: #ff8800;
+  /* background-color: #ff8800; */
+  background-color: #{{ site.color.secondary }};
+}
+
+/* Contact section heading */
+#contact .contact-heading {
+    /*font-size: 2em;           /* Large, clear text */
+    font-weight: 700;         /* Bold */
+    color: #{{ site.color.primary }};           /* Your secondary warm orange */
+    text-align: center;       /* Centered above the form */
+    margin-bottom: 1em;       /* Space below heading */
+    text-transform: uppercase; /* Optional: make it uppercase for impact */
+    letter-spacing: 1px;      /* Slight spacing for readability */
+}
+
+
+
+/********************/
+/* certificates */
+
+/* #certificates .grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+} */
+
+
+#certificates {
+  text-align: center;
+}
+
+.certificates-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1200px; /* max width for the whole row */
+  margin: 0 auto; /* center it */
+}
+
+.certificates-row .card {
+  flex: 1 1 250; /* min width per card */
+  max-width: 300px; /* prevent too large cards */
+  box-sizing: border-box;
+}
+
+.certificates-row img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.certificates-row .card {
+  opacity: 0.9;
+}
+.certificates-row .card:hover {
+  opacity: 1;
+}
+.certificates-row .card a.button {
+  color: #{{ site.color.secondary-dark }};
+}
+
+.certificates-row .card a.button:hover {
+  color: #{{ site.color.secondary }};
 }
