@@ -179,6 +179,19 @@ header .intro-text .skills {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
+/* fix for deviding nav from content */
+.navbar-solaris {
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow under nav */
+  /*background-color: #fff; /* or your header bg color */
+  z-index: 1030; /* stay above content */
+}
+
+/*.navbar-solaris.navbar-shrink {
+  background-color: #fff; /* or dark if you prefer */
+  /*box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* stronger shadow on scroll */
+/*}*/
+/** ********* */
 
 .navbar a:focus {
     outline: 0;
