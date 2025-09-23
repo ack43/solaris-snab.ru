@@ -165,6 +165,9 @@ header .intro-text .skills {
     /* line-height: 15px; */
     font-size: 0.85em;
   }
+  .navbar-collapse .navbar-nav > li > a {
+    font-size: 0.85em;
+  }
   nav.navbar.navbar-solaris .phone-nav {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -179,7 +182,7 @@ header .intro-text .skills {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
-/* fix for deviding nav from content */
+/* fix for dividing nav from content */
 .navbar-solaris {
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow under nav */
@@ -524,6 +527,7 @@ footer .footer-below {
 
 /* local updates */
 
+
 body section header {
 	background: transparent;
 	color: #{{ site.color.secondary }};
@@ -543,9 +547,14 @@ nav.navbar .phone-link:hover {
 }
 
 @media screen and (max-width: 992px) {
+  /* .collapsing.navbar-collapse nav.navbar-nav.navbar-right a, 
   .collapse.navbar-collapse nav.navbar-nav.navbar-right a {
     font-size: 0.85em;
-  } 
+  }  */
+  .navbar-collapse .navbar-nav > li > a {
+  font-size: 0.85em;
+  }
+
   nav.navbar .phone-link {
     margin: 0px;
   } 
@@ -644,15 +653,19 @@ nav.navbar .phone-link:hover {
   /* .navbar-header .navbar-toggle {
     display: block;
   } */
-  .navbar-collapse.collapse {
-    display: none !important;
+  .navbar-collapse.collapsing {
+    font-size: 1em;
   }
-  nav.navbar.navbar-solaris.collapse .navbar-nav>li>a {
+  /* .navbar-collapse.collapse {
+    display: none !important;
+  } */
+  nav.navbar.navbar-solaris.collapsing .navbar-nav>li>a , nav.navbar.navbar-solaris.collapse .navbar-nav>li>a {
     font-size: 1em;
   }
   .navbar-collapse.collapse.in {
     display: block !important;
   }
+  nav.navbar.navbar-solaris.collapsing.in .navbar-nav>li>a,
   nav.navbar.navbar-solaris.collapse.in .navbar-nav>li>a {
     font-size: 1em;
   }
