@@ -1,0 +1,59 @@
+@media(min-width:768px) {
+    .navbar-fixed-top {
+        padding: 10px 0;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+    }
+
+    .navbar-fixed-top.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+
+/* Mobile adjustments for navbar */
+@media(max-width:992px) {
+  .navbar-brand {
+    padding-top: 15px;
+  }
+  .collapse.navbar-collapse {
+    margin-top: 15px;
+  }
+  nav.navbar.navbar-solaris {
+    font-size: 1.2em;
+    padding: 0px 5px 10px 5px;
+  }
+  nav.navbar.navbar-solaris .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.85em;
+  }
+  .navbar-collapse .navbar-nav > li > a {
+    font-size: 0.85em;
+  }
+  nav.navbar.navbar-solaris .phone-nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 15px;
+    font-size: 0.95em;
+    margin: 19px 10px 19px 1em
+  }
+}
+
+/* Solariss navbar specific */
+.navbar-solaris {
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1030;
+}

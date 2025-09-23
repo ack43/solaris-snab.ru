@@ -1,2 +1,20 @@
 {% include css/bootstrap.min.css %}
+
+{% comment %}
 {% include css/main.css %}
+{% endcomment %}
+{% include css/base.css %}
+{% include css/nav.css %}
+{% include css/header.css %}
+{% include css/cta.css %}
+{% include css/about.css %}
+{% include css/reasons.css %}
+{% include css/pricing.css %}
+
+{% comment %}
+{% include css/portfolio.css %}
+{% endcomment %}
+
+{% include css/contact.css %}
+{% include css/certificates.css %}
+{% include css/footer.css %}

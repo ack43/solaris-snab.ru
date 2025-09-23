@@ -124,3 +124,6 @@ collections:
 #       type: "posts"
 #     values:
 #       permalink: ""
+
+plugins:
+  - jekyll-minifier

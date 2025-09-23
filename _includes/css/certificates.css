@@ -1,0 +1,40 @@
+#certificates {
+  text-align: center;
+}
+
+.certificates-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.certificates-row .card {
+  flex: 1 1 250; 
+  max-width: 300px; 
+  box-sizing: border-box;
+}
+
+.certificates-row img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.certificates-row .card {
+  opacity: 0.9;
+}
+
+.certificates-row .card:hover {
+  opacity: 1;
+}
+
+.certificates-row .card a.button {
+  color: #{{ site.color.secondary-dark }};
+}
+
+.certificates-row .card a.button:hover {
+  color: #{{ site.color.secondary }};
+}

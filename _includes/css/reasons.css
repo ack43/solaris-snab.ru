@@ -1,0 +1,78 @@
+/* reasons.css */
+
+/* Reasons Section */
+#reasons {
+  padding: 100px 0;
+  background-color: #{{ site.color.secondary }};
+  color: #fff;
+  text-align: center;  
+  width: 100%;
+}
+
+#reasons h2 {
+  font-size: 3.6rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  color: #{{ site.color.primary }};
+  max-width: 1200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#reasons .reason {
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#reasons .reason h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #{{ site.color.primary }};
+}
+
+#reasons .reason p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #{{ site.color.primary }};
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  #reasons h2 {
+    font-size: 2.8rem;
+  }
+
+  #reasons .reason h3 {
+    font-size: 1.8rem;
+  }
+
+  #reasons .reason p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #reasons {
+    padding: 75px 1rem;
+  }
+
+  #reasons h2 {
+    font-size: 2.2rem;
+  }
+
+  #reasons .reason h3 {
+    font-size: 1.5rem;
+  }
+
+  #reasons .reason p {
+    font-size: 1.2rem;
+  }
+}
