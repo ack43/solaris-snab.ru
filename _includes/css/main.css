@@ -955,6 +955,54 @@ nav.navbar .phone-link:hover {
   }
 }
 
+
+/***** ABOUT ******/
+/* About section - default / large screens */
+#about h2 {
+  font-size: 4.8rem;   /* same as fuel-title */
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+#about p {
+  font-size: 3.6rem;   /* same as fuel-description */
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+/* Medium screens - tablets (≤992px) */
+@media screen and (max-width: 992px) {
+  #about h2 {
+    font-size: 3.2rem;
+  }
+  #about p {
+    font-size: 2.2rem;
+  }
+}
+
+/* Small screens - mobile (≤768px) */
+@media screen and (max-width: 768px) {
+  #about h2 {
+    font-size: 2rem;
+  }
+  #about p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Extra small screens - very narrow mobile (≤480px) */
+@media screen and (max-width: 480px) {
+  #about h2 {
+    font-size: 1.6rem;
+  }
+  #about p {
+    font-size: 1rem;
+  }
+}
+/*********************/
+
 /************************/
 /* Pricing Section */
 #pricing .pricing-header {
