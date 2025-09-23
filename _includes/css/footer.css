@@ -7,6 +7,7 @@ footer .footer-col {
 
 footer .footer-above .row #social-col ul > li {
   display: inline-block;
+  font-size: 2em;
 }
 footer .footer-above .row #social-col ul > li a {
   color: white;
@@ -29,6 +30,7 @@ footer .footer-above .row #social-col ul > li .btn-social-title {
     display: block;
     width: 100%;
     text-align: center;
+    font-size: 1em;
   }
   footer .footer-above .row #social-col ul > li .btn-social-title {
     display: inline-block;
