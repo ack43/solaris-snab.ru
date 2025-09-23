@@ -44,21 +44,86 @@
   text-align: center;
 }
 
-.fuel-title { font-size:4.8rem; font-weight:800; text-shadow:1px 1px 8px rgba(0,0,0,0.7); margin:10px auto; text-align:left; }
-.fuel-description { font-size:3.6rem; font-weight:600; max-width:60%; margin:auto 0; text-shadow:1px 1px 6px rgba(0,0,0,0.6); text-align:left; }
-.fuel-button-wrapper { width:100%; display:flex; justify-content:flex-start; padding:2rem; margin-bottom:10vh; }
-.fuel-button { padding:1rem 2rem; font-size:3rem; font-weight:600; border-radius:8px; transition:transform .3s, box-shadow .3s, background-color .3s; background-color:#ff9900; color:#{{ site.color.blacky2 }}; box-shadow:0 6px 20px rgba(0,0,0,0.3);}
-.fuel-button:hover { transform:translateY(-3px); box-shadow:0 10px 16px rgba(0,0,0,0.4); background-color:#ee8800; color:initial; }
+.fuel-title { 
+  font-size:4.8rem; 
+  font-weight:800; 
+  text-shadow:1px 1px 8px rgba(0,0,0,0.7); 
+  margin:10px auto; 
+  text-align:left; 
+}
+.fuel-description { 
+  font-size:3.6rem; 
+  font-weight:600; 
+  max-width:60%; 
+  margin:auto 0; 
+  text-shadow:1px 1px 6px rgba(0,0,0,0.6); 
+  text-align:left;
+ }
+.fuel-button-wrapper { 
+  width:100%;
+   display:flex; 
+  justify-content:flex-start;
+  padding:2rem; 
+  margin-bottom:10vh;
+ }
+.fuel-button { 
+  padding:1rem 2rem; 
+  font-size:3rem; 
+  font-weight:600; 
+  border-radius:8px; 
+  transition:transform .3s, box-shadow .3s, background-color .3s; 
+  background-color:#ff9900; 
+  color:#{{ site.color.blacky2 }}; 
+  box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+.fuel-button:hover { 
+  transform:translateY(-3px);
+   box-shadow:0 10px 16px rgba(0,0,0,0.4);
+   background-color:#ee8800; 
+  color:initial; 
+}
 
 @media (max-width: 768px) {
-  #fuel { margin-top:20px; height:auto; max-height:500px; }
-  .fuel-block { min-height:auto; padding:1rem; }
-  .fuel-content { justify-content:center; align-items:center; height:auto; padding:1rem; max-width:800px; }
-  .fuel-button-wrapper { justify-content:center; padding:1.5rem; }
-  .fuel-button { font-size:1.2rem; padding:.8rem 1.5rem; width:auto; }
-  .fuel-title { font-size:2rem; }
-  .fuel-description { font-size:1.2rem; max-width:90%; }
+  #fuel { 
+    margin-top:40px; 
+    height:auto; max-height:500px; 
+  }
+  .fuel-block {
+     min-height:auto;
+     padding:1rem;
+   }
+  .fuel-content {
+     justify-content:center;
+     align-items:center;
+     height:auto;
+     padding:1rem;
+     max-width:800px;
+   }
+  .fuel-button-wrapper { 
+    justify-content:center; 
+    padding:1.5rem; 
+    margin-bottom: 10px;
+  }
+  .fuel-button { 
+    font-size:1.2rem; 
+    padding:.8rem 1.5rem; 
+    width: auto;
+    margin: 35px auto 5px;
+   }
+  .fuel-title { 
+    font-size:2rem; 
+  }
+  .fuel-description { 
+    font-size:1.2rem; 
+    max-width:90%; 
+    text-align: left;
+    margin: 20px 50% 20px -0px;
+  }
 }
 @media (max-width: 480px) {
-  .fuel-button { font-size:1rem; padding:.7rem 1.2rem; border-radius:6px; }
+  .fuel-button { 
+    font-size:1rem; 
+    padding:.7rem 1.2rem; 
+    border-radius:6px; 
+  }
 }

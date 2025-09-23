@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top navbar-solaris">
-  <div class="container">
+  <!-- <div class="container"> -->
     <!-- Brand and toggle -->
     <div class="navbar-header page-scroll">
 
@@ -13,7 +13,7 @@
       </button>
       
       <!-- Mobile phone link -->
-      <a class="phone-link mobile-phone-link navbar-text visible-xs-inline" href="{{ site.phoneLink }}" style="margin-right: 10px;">
+      <a class="phone-link mobile-phone-link navbar-text visible-xs-inline-block" href="{{ site.phoneLink }}">
         📞 {{ site.phone }}
       </a>
 
@@ -28,7 +28,7 @@
 
     <!-- Collapsible menu -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-left">
         <li class="hidden"><a href="#page-top"></a></li>
         <li class="page-scroll"><a href="#page-top">О компании</a></li>
         <li class="page-scroll"><a href="#pricing">Продукция</a></li>
@@ -37,9 +37,11 @@
       </ul>
 
       <!-- Desktop phone link -->
-      <a class="phone-link navbar-text" href="{{ site.phoneLink }}">
-        📞 {{ site.phone }}
-      </a>
+      <div class="navbar-right">
+        <a class="phone-link desktop-phone-link navbar-text" href="{{ site.phoneLink }}">
+          📞 {{ site.phone }}
+        </a>
+      </div>
     </div>
-  </div>
+  <!-- </div> -->
 </nav>

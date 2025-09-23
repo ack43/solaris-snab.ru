@@ -104,6 +104,13 @@ hr.star-primary:after {
     border-radius: 100%;
     font-size: 20px;
     line-height: 28px;
+    color: #{{ site.color.blacky1 }};
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* added shadow */
+
+    display: flex;            /* enable flex */
+    align-items: center;      /* vertical centering */
+    justify-content: center;  /* horizontal centering */
+    text-align: center;       /* fallback */
 }
 
 .scroll-top .btn:focus {

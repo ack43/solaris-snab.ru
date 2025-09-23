@@ -583,7 +583,7 @@ nav.navbar .phone-link:hover {
   } 
 }
 @media screen and (max-width: 580px) {
-  nav.navbar .mobile-phone-link  {
+  nav.navbar .mobile-phone-link.  {
     display: none !important; 
   } 
   nav.navbar .navbar-brand  {

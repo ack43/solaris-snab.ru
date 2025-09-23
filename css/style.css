@@ -7,23 +7,6 @@
 
 /* nav */
 
-nav.navbar .collapse.navbar-collapse {
-  display: flex;      /* force flex container */
-  align-items: center;           /* vertically center items */
-  justify-content: space-between; /* push nav left, phone right */
-  font-size: 12px;
-}
-@media (min-width: 768px) {
-  nav.navbar .collapse.navbar-collapse {
-    display: flex !important;       /* force flex container */
-  }
-}
-@media (max-width: 768px) {
-  nav.navbar .collapse.navbar-collapse {
-    display: none;
-  }
-}
-
 nav.navbar .navbar-nav {
   margin: 0;    /* remove default margin */
 }
