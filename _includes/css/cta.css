@@ -45,7 +45,7 @@
 }
 
 .fuel-title { 
-  font-size:4.8rem; 
+  font-size:4.rem; 
   font-weight:800; 
   text-shadow:1px 1px 8px rgba(0,0,0,0.7); 
   margin:10px auto; 
@@ -55,7 +55,8 @@
   font-size:3.6rem; 
   font-weight:600; 
   max-width:60%; 
-  margin:auto 0; 
+  /* margin:auto 0;  */
+  margin: 20px 55% 20px -0px;
   text-shadow:1px 1px 6px rgba(0,0,0,0.6); 
   text-align:left;
  }
@@ -83,10 +84,17 @@
   color:initial; 
 }
 
+@media (max-width: 992px) {
+  #cta {
+    min-height: 70vh;
+  }
+}
 @media (max-width: 768px) {
   #fuel { 
     margin-top:40px; 
-    height:auto; max-height:500px; 
+    height:auto; 
+    max-height:500px; 
+    min-height: 60vh;
   }
   .fuel-block {
      min-height:auto;
