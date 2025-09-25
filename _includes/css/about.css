@@ -1,4 +1,10 @@
+#about  {
+  background-color: #{{ site.color.secondary }};
+  width: 100%;
+}
 #about h2 {
+  color: #{{ site.color.primary }};
+  background-color: #{{ site.color.secondary }};
   font-size: 3.8rem;
   font-weight: 800;
   line-height: 1.3;
@@ -6,6 +12,8 @@
 }
 
 #about p {
+  color: #{{ site.color.primary }};
+  background-color: #{{ site.color.secondary }};
   font-size: 2.6rem;
   font-weight: 600;
   line-height: 1.4;

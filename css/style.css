@@ -41,45 +41,6 @@ nav.navbar .navbar-nav {
 	margin-top: 25px;
 } */
 
-/* pricing */
-
-#pricing .pricing-row {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-}
-
-#pricing .pricing-row .oil-type {
-  font-weight: bold;
-}
-
-#pricing .pricing-row .oil-brand {
-  color: var(--muted-color);
-  font-size: 0.9em;
-}
-
-#pricing .pricing-row .price-volume,
-#pricing .pricing-row .price-weight {
-  text-align: right;
-  font-weight: 500;
-}
-
-
-#pricing-table {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-#pricing-table.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none; /* prevent interactions while hidden */
-}
-
 /* yandex forms */
 
 /* By default: show desktop, hide mobile */

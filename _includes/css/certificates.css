@@ -1,12 +1,15 @@
 #certificates {
   text-align: center;
+  width: 100%;
+  color: #{{ site.color.primary }};
+  background-color: #{{ site.color.secondary }};
 }
 
 .certificates-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2.5rem 1.5rem;
   max-width: 1200px; 
   margin: 0 auto; 
 }
@@ -15,6 +18,11 @@
   flex: 1 1 250; 
   max-width: 300px; 
   box-sizing: border-box;
+}
+.certificates-row .card h3 {  
+  font-size: 22px;
+  margin-top: 11px;
+  margin-bottom: 5px;
 }
 
 .certificates-row img {
@@ -32,9 +40,9 @@
 }
 
 .certificates-row .card a.button {
-  color: #{{ site.color.secondary-dark }};
+  color: #{{ site.color.primary-grey }};
 }
 
 .certificates-row .card a.button:hover {
-  color: #{{ site.color.secondary }};
+  color: #{{ site.color.primary }};
 }

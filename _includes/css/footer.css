@@ -1,8 +1,10 @@
 footer {
-  background-color: #{{ site.color.secondary }};
+  color: #{{ site.color.secondary-dark }};
+  background-color: #{{ site.color.primary }};
+  padding: 5px 15px;
 }
 footer .footer-col {
-  color: white;
+  color: #{{ site.color.secondary }};
 }
 
 footer .footer-above .row #social-col ul > li {
@@ -10,10 +12,10 @@ footer .footer-above .row #social-col ul > li {
   font-size: 2em;
 }
 footer .footer-above .row #social-col ul > li a {
-  color: white;
+  color: #{{ site.color.secondary-dark }};
 }
 footer .footer-above .row #social-col ul > li a:hover {
-  color: #{{ site.color.blacky1 }};
+  color: #{{ site.color.secondary }};
   text-decoration: none;
 }
 
@@ -46,6 +48,8 @@ footer .footer-above .row #social-col ul > li .btn-social-title {
 
 #policy-col {
   margin-top: 20px;
+  font-size: 0.8em;
+  color: #{{ site.color.primary-grey }};
 }
 
 #policy-col ul {
@@ -55,7 +59,7 @@ footer .footer-above .row #social-col ul > li .btn-social-title {
 }
 
 #policy-col ul li a {
-  color: white;
+  color: #{{ site.color.primary-grey }};
   font-size: 1.2em;
   line-height: 1.5em;
   text-decoration: none;
@@ -63,6 +67,6 @@ footer .footer-above .row #social-col ul > li .btn-social-title {
 
 #policy-col ul li a:hover {
   text-decoration: underline;
-  color: #{{ site.color.blacky1 }};
+  color: white;
   transition: all 0.3s ease-in-out;
 }

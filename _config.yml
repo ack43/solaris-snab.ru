@@ -62,6 +62,7 @@ color:
   # Primary — industrial dark (charcoal/graphite instead of teal)
   primary: 212121
   primary-rgb: "33,33,33"
+  primary-grey: 414141
 
   # Secondary — muted warm orange (unchanged)
   secondary: d07a2f

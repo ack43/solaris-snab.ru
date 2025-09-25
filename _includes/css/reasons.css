@@ -3,7 +3,7 @@
 /* Reasons Section */
 #reasons {
   padding: 100px 0;
-  background-color: #{{ site.color.secondary }};
+  background-color: #{{ site.color.primary }};
   color: #fff;
   text-align: center;  
   width: 100%;
@@ -14,7 +14,7 @@
   font-weight: 800;
   margin-bottom: 3rem;
   text-transform: uppercase;
-  color: #{{ site.color.primary }};
+  color: #{{ site.color.secondary }};
   max-width: 1200px;
   text-align: center;
   margin-left: auto;
@@ -34,14 +34,14 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #{{ site.color.primary }};
+  color: #{{ site.color.secondary }};
 }
 
 #reasons .reason p {
   font-size: 1.6rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  color: #{{ site.color.primary }};
+  color: #{{ site.color.secondary }};
 }
 
 /* Responsive adjustments */
