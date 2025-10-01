@@ -1,43 +1,33 @@
 (function() {
   let firstLoad = true;
-  let pricingFetched = false; // make sure we fetch only once
+  let pricingFetched = false;
+  const oilAnim = document.getElementById("oilWaveRise");
 
   function fetchPricing(isButtonClick = false) {
-    if(isButtonClick) { resetTankAnimation(); }
+    if(isButtonClick) resetTankAnimation();
 
     const section = document.getElementById("pricing");
-    if (!section) {
-      console.error("No pricing section found");
-      return;
-    }
+    if (!section) return console.error("No pricing section found");
 
     const sheetUrl = section.getAttribute("data-sheet-url");
-    if (!sheetUrl) {
-      console.error("No sheet URL found in #pricing data attribute");
-      return;
-    }
+    if (!sheetUrl) return console.error("No sheet URL found in #pricing");
 
     const pricingUpdateBlock = section.querySelector("#pricing-update-ts");
-    if (pricingUpdateBlock) pricingUpdateBlock.classList.add('hidden');
     const priceUpdater = section.querySelector("#priceUpdater");
-    if (priceUpdater) priceUpdater.classList.add('hidden');
-    
     const h2 = section.querySelector('h2');
     const pricingTable = section.querySelector("#pricing-table");
     const loaderSVG = section.querySelector(".loader-svg");
 
-    if (loaderSVG) {            
+    if (loaderSVG) {
       if (h2) h2.classList.add('hidden');
       loaderSVG.classList.remove('hidden');
     }
 
-    if (!pricingTable) {
-      console.error("No pricing table found");
-      return;
-    }
-
+    if (!pricingTable) return console.error("No pricing table found");
     pricingTable.style.visibility = 'hidden';
     pricingTable.classList.add('hidden');
+    if (pricingUpdateBlock) pricingUpdateBlock.classList.add('hidden');
+    if (priceUpdater) priceUpdater.classList.add('hidden');
 
     function showPricingTable(csv) {
       if (loaderSVG) {
@@ -60,42 +50,55 @@
           <div class="oil-brand">Поставщик</div>
           <div class="price-volume">Цена / объем</div>
           <div class="price-weight">Цена / тонна</div>
+          <div class="request"></div>
         </article>
         <hr>`;
 
-      for (let i = 0; i < rows.length; i++) {
-        const rowData = rows[i];
-        if (!rowData || rowData.length < 2) continue;
+        rows.slice(2).forEach((rowData) => {
+          if (!rowData || rowData.length < 2) return;
 
-        html += `
-          <article class="card pricing-row">
-            <div class="oil-type">${rowData[0] || ''}</div>
-            <div class="oil-brand">${rowData[1] || ''}</div>
-            <div class="price-volume">${rowData[2] || ''}</div>
-            <div class="price-weight">${rowData[3] || ''}</div>
-          </article>
-        `;
-      }
+          let oilFullName = `${rowData[0]} (${rowData[1]})`;
+          let oilPrice = `${rowData[2]} / ${rowData[3]}`;
+
+          // Escape single quotes and backslashes
+          const escapeForJs = str => str.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+          oilFullName = escapeForJs(oilFullName);
+          oilPrice = escapeForJs(oilPrice);
+
+          html += `
+            <article class="card pricing-row">
+              <div class="oil-type">${rowData[0] || ''}</div>
+              <div class="oil-brand">${rowData[1] || ''}</div>
+              <div class="price-volume">${rowData[2] || ''}</div>
+              <div class="price-weight">${rowData[3] || ''}</div>
+              <div class="request">
+                <button onclick="requestOffer('${oilFullName}', '${oilPrice}', this)">Заказать</button>
+              </div>
+            </article>`;
+        });
+
 
       html += `<hr>`;
       pricingTable.innerHTML = html;
-
       pricingTable.style.visibility = '';
       pricingTable.classList.remove('hidden');
-
       if (priceUpdater) priceUpdater.classList.remove('hidden');
     }
 
     const doFetch = () => {
+      // Start SVG animation from 0 each fetch
+      resetTankAnimation();
+
       fetch(sheetUrl)
-        .then(response => response.text())
+        .then(res => res.text())
         .then(csv => {
           firstLoad = false;
+
+          // visually finish tank quickly
           finishTankAnimation();
 
-          setTimeout(() => {
-            showPricingTable(csv);
-          }, 400); 
+          // show table after short delay (0.4s)
+          setTimeout(() => showPricingTable(csv), 400);
         })
         .catch(err => {
           pricingTable.classList.add("loading-error");
@@ -107,14 +110,15 @@
     };
 
     if (firstLoad) {
-      const delay = 2000 + Math.random() * 1000;
+      const delay = 20 + Math.random() * 10;
+      // const delay = 2000 + Math.random() * 1000;
       setTimeout(doFetch, delay);
     } else {
       doFetch();
     }
   }
 
-  // IntersectionObserver to trigger fetchPricing when pricing block enters viewport
+  // IntersectionObserver for scroll-trigger
   const pricingSection = document.getElementById("pricing");
   if (pricingSection) {
     const observer = new IntersectionObserver((entries, obs) => {
@@ -122,65 +126,112 @@
         if (entry.isIntersecting && !pricingFetched) {
           fetchPricing();
           pricingFetched = true;
-          obs.unobserve(entry.target); // stop observing after first fetch
+          obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.3 }); // trigger when 30% visible
-
+    }, { threshold: 0.3 });
     observer.observe(pricingSection);
   }
 
-  // expose to global for button click
   window.fetchPricing = fetchPricing;
 
-  /* UTILS */
-  function parseCSV(text) {
-    const rows = [];
-    let row = [];
-    let field = '';
-    let inQuotes = false;
-
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      const nextChar = text[i + 1];
-
-      if (char === '"') {
-        if (inQuotes && nextChar === '"') {
-          field += '"';
-          i++;
-        } else {
-          inQuotes = !inQuotes;
-        }
-      } else if (char === ',' && !inQuotes) {
-        row.push(field);
-        field = '';
-      } else if ((char === '\n' || char === '\r') && !inQuotes) {
-        if (char === '\r' && nextChar === '\n') i++;
-        row.push(field);
-        rows.push(row);
-        row = [];
-        field = '';
-      } else {
-        field += char;
-      }
-    }
-    if (field !== '' || row.length > 0) {
-      row.push(field);
-      rows.push(row);
-    }
-    return rows;
-  }
-
-  const oilAnim = document.getElementById("oilWaveRise");
-
+  // ====== SVG Utils ======
   function finishTankAnimation() {
     if (!oilAnim) return;
-    oilAnim.setCurrentTime(5);
-    oilAnim.pauseAnimations();
+    oilAnim.setCurrentTime(5); // jump to full tank
+    setTimeout(() => oilAnim.unpauseAnimations(), 500); // resume animation for next fetch
   }
 
   function resetTankAnimation() {
     if (!oilAnim) return;
-    oilAnim.setCurrentTime(0);
+    oilAnim.setCurrentTime(0); // reset to empty
+    oilAnim.unpauseAnimations();   // allow new animation
+  }
+  
+  // CSV parser
+  function parseCSV(text) {
+    const rows = [];
+    let row = [], field = '', inQuotes = false;
+    for (let i=0;i<text.length;i++) {
+      const char = text[i], next = text[i+1];
+      if (char === '"') {
+        if (inQuotes && next === '"') { field += '"'; i++; } 
+        else { inQuotes = !inQuotes; }
+      } else if (char === ',' && !inQuotes) {
+        row.push(field); field = '';
+      } else if ((char === '\n' || char === '\r') && !inQuotes) {
+        if (char === '\r' && next === '\n') i++;
+        row.push(field); rows.push(row); row=[]; field='';
+      } else { field += char; }
+    }
+    if (field !== '' || row.length > 0) { row.push(field); rows.push(row); }
+    return rows;
   }
 })();
+
+///
+///
+///
+function requestOffer(name, price, button) {
+  const iframe = document.getElementById('ya-form-68c5a3c0068ff00016a6033a');
+  const iframeMobile = document.getElementById('ya-form-68c5a3c0068ff00016a6033a-mobile');
+
+  const baseUrl = "https://forms.yandex.ru/cloud/68c5a3c0068ff00016a6033a";
+  const params = new URLSearchParams({
+    iframe: "1",
+    answer_short_text_9008958568882614: name,
+    answer_short_text_9008958568902556: price,
+  });
+  const url = `${baseUrl}?${params.toString()}`;
+
+  // Remove old handlers
+  iframe.onload = iframeMobile.onload = null;
+
+  // Store original button text
+  const originalText = button.innerText;
+
+  // Disable button and start loading animation
+  button.disabled = true;
+
+  function startLoadingAnimation(button) {
+    const dots = ['\u2022', '\u25AA', '\u25CF']; // small, bigger, biggest
+    const steps = [
+      [0, 0, 0],
+      [1, 0, 0],
+      [2, 1, 0],
+      [1, 2, 1],
+      [0, 1, 2],
+      [0, 0, 1],
+      [0, 0, 0],
+    ];
+
+    let stepIndex = 0;
+
+    return setInterval(() => {
+      const current = steps[stepIndex];
+      button.innerText = current.map(i => dots[i]).join(' ');
+      stepIndex = (stepIndex + 1) % steps.length;
+    }, 100); // smaller interval = smoother
+  }
+
+  const loadingInterval = startLoadingAnimation(button);
+
+
+  // On iframe load, scroll and restore button
+  const onIframeLoaded = () => {
+    clearInterval(loadingInterval);
+    button.innerText = originalText;
+    button.disabled = false;
+
+    $('html, body').stop().animate({
+      scrollTop: $('#contact').offset().top
+    }, 500, 'easeInOutExpo');
+  };
+
+  iframe.onload = onIframeLoaded;
+  iframeMobile.onload = onIframeLoaded;
+
+  // Set src AFTER binding events
+  iframe.src = iframeMobile.src = url;
+}
+
