@@ -1,7 +1,9 @@
 (function() {
   let firstLoad = true;
+  let pricingFetched = false; // make sure we fetch only once
+
   function fetchPricing(isButtonClick = false) {
-    if(isButtonClick) {resetTankAnimation();}
+    if(isButtonClick) { resetTankAnimation(); }
 
     const section = document.getElementById("pricing");
     if (!section) {
@@ -20,7 +22,6 @@
     const priceUpdater = section.querySelector("#priceUpdater");
     if (priceUpdater) priceUpdater.classList.add('hidden');
     
-
     const h2 = section.querySelector('h2');
     const pricingTable = section.querySelector("#pricing-table");
     const loaderSVG = section.querySelector(".loader-svg");
@@ -35,11 +36,9 @@
       return;
     }
 
-    // Hide the pricing table while fetching
     pricingTable.style.visibility = 'hidden';
     pricingTable.classList.add('hidden');
 
-    
     function showPricingTable(csv) {
       if (loaderSVG) {
         if (h2) h2.classList.remove('hidden');
@@ -51,7 +50,7 @@
 
       if (pricingUpdateBlock) {
         pricingUpdateBlock.classList.remove('hidden');
-        const dateText = rows[0][1]; // adjust as needed
+        const dateText = rows[0][1]; 
         pricingUpdateBlock.innerHTML = `на ${dateText}`;
       }
 
@@ -64,7 +63,7 @@
         </article>
         <hr>`;
 
-      for (let i = 0; i < rows.length - 0; i++) {
+      for (let i = 0; i < rows.length; i++) {
         const rowData = rows[i];
         if (!rowData || rowData.length < 2) continue;
 
@@ -81,11 +80,10 @@
       html += `<hr>`;
       pricingTable.innerHTML = html;
 
-      // Show the pricing table again after data is loaded
       pricingTable.style.visibility = '';
       pricingTable.classList.remove('hidden');
 
-      priceUpdater.classList.remove('hidden');
+      if (priceUpdater) priceUpdater.classList.remove('hidden');
     }
 
     const doFetch = () => {
@@ -93,15 +91,11 @@
         .then(response => response.text())
         .then(csv => {
           firstLoad = false;
-          // fast finish oil animation
           finishTankAnimation();
 
-          // wait 0.4s to show the text through oil
           setTimeout(() => {
-            showPricingTable(csv); // your existing code to reveal table
+            showPricingTable(csv);
           }, 400); 
-          
-          
         })
         .catch(err => {
           pricingTable.classList.add("loading-error");
@@ -112,24 +106,35 @@
         });
     };
 
-    // Delay fetch only on first load
     if (firstLoad) {
-      const delay = 2000 + Math.random() * 1000; // 2–3 seconds
+      const delay = 2000 + Math.random() * 1000;
       setTimeout(doFetch, delay);
     } else {
       doFetch();
     }
   }
 
-  document.addEventListener("DOMContentLoaded", fetchPricing);
+  // IntersectionObserver to trigger fetchPricing when pricing block enters viewport
+  const pricingSection = document.getElementById("pricing");
+  if (pricingSection) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !pricingFetched) {
+          fetchPricing();
+          pricingFetched = true;
+          obs.unobserve(entry.target); // stop observing after first fetch
+        }
+      });
+    }, { threshold: 0.3 }); // trigger when 30% visible
+
+    observer.observe(pricingSection);
+  }
 
   // expose to global for button click
   window.fetchPricing = fetchPricing;
 
-
   /* UTILS */
-  /* ***** */
-    function parseCSV(text) {
+  function parseCSV(text) {
     const rows = [];
     let row = [];
     let field = '';
@@ -166,26 +171,16 @@
     return rows;
   }
 
-  // Assume SVG is already in DOM
   const oilAnim = document.getElementById("oilWaveRise");
 
   function finishTankAnimation() {
     if (!oilAnim) return;
-
-    // Stop the animation at the end
-    // setCurrentTime works in seconds
-    // Since dur="5s", set to 5 to jump to end
     oilAnim.setCurrentTime(5);
-
-    // Freeze the animation
-    oilAnim.pauseAnimations(); // freezes all animations in SVG
+    oilAnim.pauseAnimations();
   }
+
   function resetTankAnimation() {
     if (!oilAnim) return;
-
-    // Stop the animation at the end
-    // setCurrentTime works in seconds
-    // Since dur="5s", set to 5 to jump to end
     oilAnim.setCurrentTime(0);
   }
 })();
