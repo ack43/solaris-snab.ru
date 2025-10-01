@@ -42,8 +42,8 @@ blocks:
   header: false
   cta: true
   about: true
-  reasons: true
   pricing: true
+  reasons: true
   # yandex_form: false # cause of contact: yandex
   yandex_form: true
   certificates: true

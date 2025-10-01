@@ -2,8 +2,8 @@
 
 /* Reasons Section */
 #reasons {
-  padding: 100px 0;
-  background-color: #{{ site.color.primary }};
+  padding: 70px 0; /* 100px 0px*/
+  background-color: #{{ site.color.secondary }};
   color: #fff;
   text-align: center;  
   width: 100%;
@@ -14,7 +14,7 @@
   font-weight: 800;
   margin-bottom: 3rem;
   text-transform: uppercase;
-  color: #{{ site.color.secondary }};
+  color: #{{ site.color.blacky1 }};
   max-width: 1200px;
   text-align: center;
   margin-left: auto;
@@ -25,7 +25,7 @@
   padding: 0 2rem;
   margin-bottom: 2rem;
   text-align: left;
-  max-width: 800px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -34,14 +34,14 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #{{ site.color.secondary }};
+  color: #{{ site.color.blacky2 }};
 }
 
 #reasons .reason p {
   font-size: 1.6rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  color: #{{ site.color.secondary }};
+  color: #{{ site.color.primary }};
 }
 
 /* Responsive adjustments */

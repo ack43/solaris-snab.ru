@@ -20,14 +20,14 @@
     {% include about.html %}
     {% endif %}
 
+    {% if site.blocks.pricing %}
+    {% include pricing.html %}
+    {% endif %}
+
     {% if site.blocks.reasons %}
     {% include reasons.html %}
     {% endif %}
 
-
-    {% if site.blocks.pricing %}
-    {% include pricing.html %}
-    {% endif %}
     
 
     {% if site.blocks.yandex_form %}

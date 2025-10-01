@@ -7,7 +7,7 @@
   <header class="pricing-header">
     <h2>Актуальные цены</h2>
     <button 
-      onclick="fetchPricing()" 
+      onclick="fetchPricing(true)" 
       id="priceUpdater" 
       class="secondary"
     >
@@ -20,5 +20,7 @@
   </p>
 
   <div id="pricing-table" class="grid">Загрузка...</div>
+  <!-- <div class="loader-svg"></div> -->
+  <object class="loader-svg" type="image/svg+xml" data="/assets/pricing-loader.svg"></object>
 </div>
 </section>

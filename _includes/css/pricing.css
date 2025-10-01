@@ -1,6 +1,6 @@
 #pricing {
-	color: #{{ site.color.primary }};
-	background-color: #{{ site.color.secondary }};
+	color: #{{ site.color.secondary }};
+	background-color: #{{ site.color.primary }};
 }
 #pricing .pricing-header { 
 	display:flex; 
@@ -12,12 +12,12 @@
 }
 #pricing h2 { 
 	margin:0; 
-	color:#{{ site.color.primary }}; 
+	color:#{{ site.color.secondary }}; 
 }
 #pricing #priceUpdater { 
 	margin:0; 
 	/* background-color:#{{ site.color.secondary }};  */
-	color:#{{ site.color.primary-grey }}; 
+	color:#{{ site.color.secondary-dark }}; 
 	border:none; 
 	border-radius:.5em; 
 	padding:.5em 1em; 
@@ -27,7 +27,7 @@
 #pricing .pricing-update { 
 	margin-top:.5em; 
 	font-size:.9em; 
-	color:#{{ site.color.primary-grey  }}; 
+	color:#{{ site.color.secondary-dark  }}; 
 }
 
 
@@ -70,4 +70,12 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none; /* prevent interactions while hidden */
+}
+
+#pricing .loader-svg { 
+	width: 100%; 
+	max-width: 900px; 
+	height: auto; 
+	display:block; 
+	margin: 0 auto; 
 }
