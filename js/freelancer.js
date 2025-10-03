@@ -8,8 +8,10 @@
 $(function() {
     $('.page-scroll a').bind('click', function(event) {
         var $anchor = $(this);
+        var target = $($anchor.attr('href'));
+        var targetOffset = target.is('#page-top') || target.is('#fuel') ? 0 : target.offset().top;
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: targetOffset
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });

@@ -35,14 +35,36 @@
 
 /* pricing */
 
+/*/ show in a row */
 #pricing .pricing-row {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
 }
+#pricing .pricing-row.pricing-header {
+	grid-template-columns: 1fr 1fr 2fr;
+}
+/*/ show in a column */
+/* #pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 1rem; 
+}
+#pricing .pricing-row {
+  margin-bottom: 0; 
+}
+#pricing .pricing-row.pricing-data {
+  display: inline-block;
+	margin: 1em 5em;
+} */
+
+#pricing .pricing-row.pricing-data:hover {
+	background-color: #{{site.color.primary-grey}};
+}
+
 
 #pricing .pricing-row .oil-type {
   font-weight: bold;
@@ -53,10 +75,33 @@
   font-size: 0.9em;
 }
 
+#pricing .pricing-header .price {
+	margin: 0px auto;
+}
 #pricing .pricing-row .price-volume,
 #pricing .pricing-row .price-weight {
   text-align: right;
   font-weight: 500;
+}
+
+#pricing .pricing-row .company-logo {
+	max-width: 150px;
+}
+@media screen and (max-width: 768px) {
+	#pricing .pricing-row {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: 0.25rem;
+		padding: 0.5rem 1rem;
+		margin-bottom: 0.25rem;
+	}
+	#pricing .pricing-row .company-logo {
+		max-width: 100px;
+	}
+}
+@media screen and (max-width: 480px) {
+	#pricing .pricing-row .company-logo {
+		max-width: 50px;
+	}
 }
 
 #pricing .pricing-row .request {

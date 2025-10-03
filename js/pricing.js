@@ -43,14 +43,16 @@
         const dateText = rows[0][1]; 
         pricingUpdateBlock.innerHTML = `на ${dateText}`;
       }
-
+      
+      const header = rows[1];
       let html = `
         <article class="card pricing-row pricing-header">
-          <div class="oil-type">Тип топлива</div>
-          <div class="oil-brand">Поставщик</div>
-          <div class="price-volume">Цена / объем</div>
-          <div class="price-weight">Цена / тонна</div>
-          <div class="request"></div>
+          <div class="oil-type">${header[0]}</div>
+          <div class="oil-brand">${header[1]}</div>
+          <div class="price">
+            <div class="price-volume">${header[3]}</div>
+            <div class="price-weight">${header[4]}</div>
+          </div>
         </article>
         <hr>`;
 
@@ -58,19 +60,27 @@
           if (!rowData || rowData.length < 2) return;
 
           let oilFullName = `${rowData[0]} (${rowData[1]})`;
-          let oilPrice = `${rowData[2]} / ${rowData[3]}`;
+          let oilPrice = `${rowData[3]} / ${rowData[4]}`;
 
           // Escape single quotes and backslashes
           const escapeForJs = str => str.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
           oilFullName = escapeForJs(oilFullName);
           oilPrice = escapeForJs(oilPrice);
 
+          let logo = rowData[2] || '';
+          let logoBlock = `<div class="oil-brand-logo">${logo ? `<img class='company-logo' src="${logo}" alt="${rowData[0]}" />` : ''}</div>`;
+
           html += `
-            <article class="card pricing-row">
+            <article class="card pricing-row pricing-data">
               <div class="oil-type">${rowData[0] || ''}</div>
-              <div class="oil-brand">${rowData[1] || ''}</div>
-              <div class="price-volume">${rowData[2] || ''}</div>
-              <div class="price-weight">${rowData[3] || ''}</div>
+              <div class="oil-brand">
+                <div class="oil-brand-name">${rowData[1] || ''}</div>
+                ${logoBlock}
+              </div>
+              <div class="price">
+                <div class="price-volume" title='${header[3]}'>${rowData[3] || ''}</div>
+                <div class="price-weight" title='${header[4]}'>${rowData[4] || ''}</div>
+              </div>
               <div class="request">
                 <button onclick="requestOffer('${oilFullName}', '${oilPrice}', this)">Заказать</button>
               </div>
