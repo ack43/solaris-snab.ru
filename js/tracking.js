@@ -11,10 +11,10 @@
   function sendGoal(goalName, params = {}) {
     if (typeof ym === 'function' && yaCounterId) {
       ym(yaCounterId, 'reachGoal', goalName, params);
-      console.log('[YM] Goal sent:', goalName, params);
+      console.log(`[YM-${yaCounterId}] Goal sent:`, goalName, params);
     } else {
       goalQueue.push({ goalName, params });
-      console.log('[YM] Queued goal:', goalName);
+      console.log(`[YM-${yaCounterId} Queued goal:`, goalName);
     }
   }
 
@@ -23,7 +23,7 @@
     if (typeof ym === 'function' && yaCounterId && goalQueue.length > 0) {
       goalQueue.forEach(({ goalName, params }) => ym(yaCounterId, 'reachGoal', goalName, params));
       goalQueue.length = 0;
-      console.log('[YM] Queued goals flushed');
+      console.log(`[YM-${yaCounterId}] Queued goals flushed`);
     }
   }
 
@@ -42,7 +42,7 @@
         try {
           params = JSON.parse(rawParams);
         } catch (err) {
-          console.warn('[YM] Invalid JSON in data-ym-goal-params-click:', err);
+          console.warn(`[YM-${yaCounterId}] Invalid JSON in data-ym-goal-params-click:`, err);
         }
       }
 
