@@ -38,7 +38,7 @@ main, #page-404 {
 }
 
 #page-404 .site-info {
-  color: #{{ site.color.secondary }};
+  color: #{{ site.color.secondary-dark }};
   background-color: #{{ site.color.primary }};
   /* flex: 0 0 33%; */
   display: flex;
