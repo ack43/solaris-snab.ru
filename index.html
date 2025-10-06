@@ -1,3 +1,49 @@
 ---
 layout: default
 ---
+
+{% if site.blocks.nav %}
+{% include nav.html %}
+{% endif %}
+
+{% if site.blocks.header %}
+{% include header.html %}
+{% endif %}
+
+{% if site.blocks.cta %}
+{% include cta.html %}
+{% endif %}
+
+{% if site.blocks.about %}
+{% include about.html %}
+{% endif %}
+
+{% if site.blocks.pricing %}
+{% include pricing.html %}
+{% endif %}
+
+{% if site.blocks.reasons %}
+{% include reasons.html %}
+{% endif %}
+
+
+
+{% if site.blocks.yandex_form %}
+{% include yandex-form.html %}
+{% endif %}
+
+{% if site.blocks.certificates %}
+{% include certificates.html %}
+{% endif %}
+
+{% if site.blocks.portfolio_grid %}
+{% include portfolio_grid.html %}
+{% endif %}
+
+{% if site.blocks.contact %}
+{% if site.contact == "yandex" %}
+{% include yandex-form.html %}
+{% else %}
+{% include contact.html %}
+{% endif %}
+{% endif %}

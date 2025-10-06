@@ -80,3 +80,22 @@ footer .footer-above .row #social-col ul > li .btn-social-title {
 [name=ya-form-68d39c0b02848f8d056657e8] {
   max-height: 220px !important;
 }
+
+
+
+/* Sticky footer setup */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Make main content grow to push footer down */
+main, .main-content, #content {
+  flex: 1;
+}
