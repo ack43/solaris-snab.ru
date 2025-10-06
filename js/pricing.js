@@ -221,7 +221,6 @@ function requestOffer(name, price, button) {
   const url = `${baseUrl}?${params.toString()}`;
 
   window.sendYMGoal('selectOil', {name, price});
-  window.sendYMGoal(`selectOil.${}`);
 
   // Remove old handlers
   iframe.onload = iframeMobile.onload = null;
