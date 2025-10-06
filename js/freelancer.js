@@ -9,6 +9,7 @@ $(function() {
     $('.page-scroll a').bind('click', function(event) {
         var $anchor = $(this);
         var target = $($anchor.attr('href'));
+        if(!target.startsWith('#')) return;
         var targetOffset = target.is('#page-top') || target.is('#fuel') ? 0 : target.offset().top;
         $('html, body').stop().animate({
             scrollTop: targetOffset
