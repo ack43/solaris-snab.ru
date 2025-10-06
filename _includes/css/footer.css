@@ -59,9 +59,10 @@ footer .footer-above .row #social-col ul > li .btn-social-title {
 }
 
 #policy-col ul li a {
+  padding: 5px;
   color: #{{ site.color.primary-grey }};
   font-size: 1.2em;
-  line-height: 1.5em;
+  line-height: 2em;
   text-decoration: none;
 }
 
@@ -69,4 +70,13 @@ footer .footer-above .row #social-col ul > li .btn-social-title {
   text-decoration: underline;
   color: white;
   transition: all 0.3s ease-in-out;
+}
+
+
+#request-call-col {
+  margin-top: 0px;
+}
+
+[name=ya-form-68d39c0b02848f8d056657e8] {
+  max-height: 220px !important;
 }
