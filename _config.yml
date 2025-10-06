@@ -40,7 +40,7 @@ contact: static
 blocks:
   head: true
   nav: true
-  header: false
+  header: false # replaced with about block
   cta: true
   about: true
   pricing: true
