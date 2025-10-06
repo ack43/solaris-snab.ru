@@ -7,11 +7,11 @@
   <div class="certificates-row">
     {% for cert in site.certificates %}
       <article class="card">
-        <a href="{{ cert.image }}" class="cert-lightbox">
+        <a href="{{ cert.image }}" class="cert-lightbox" data-ym-goal-click="certificate">
           <img src="{{ cert.thumb }}" alt="{{ cert.title }}">
         </a>
         <h3>{{ cert.title }}</h3>
-        <a href="{{ cert.file }}" download class="contrast button small">Скачать</a>
+        <a href="{{ cert.file }}" download class="contrast button small" data-ym-goal-click="certificate-donwload">Скачать</a>
       </article>
     {% endfor %}
   </div>

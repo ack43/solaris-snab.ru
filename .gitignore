@@ -7,4 +7,6 @@ _site
 
 .github
 
+tmp/
+
 # Gemfile.lock

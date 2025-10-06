@@ -23,7 +23,7 @@ bing_verify:
 yandex_verify: 01746633aa188d4f
 
 # Analytics / ads IDs
-## yandex_metrika_id: "12345678"   # Your Metrika counter ID
+yandex_metrika_id: "104400248"   # Your Metrika counter ID
 ## yandex_ads_id: "R-A-123456-7"   # Optional: Yandex Ads ID
 ########
 ########

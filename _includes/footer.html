@@ -28,14 +28,14 @@
                     <h3>{{ site.footer.social }}</h3>
                     <ul class="list-inline">
                         <li>
-                            <a href="{{ site.phoneLink }}" class="link-btn-social" target="_blank">
+                            <a href="{{ site.phoneLink }}" class="link-btn-social" target="_blank" data-ym-goal-click="footer.phone">
                                 <span class="btn-social btn-outline"><i class="fa-solid fa-phone"></i></span>
                                 <span class="btn-social-title">{{ site.phone }}</span>
                         </a>
                         </li>
                         {% for network in site.social %}
                             <li>
-                                <a href="{{ network.url }}" class="link-btn-social" target="_blank">
+                                <a href="{{ network.url }}" class="link-btn-social" target="_blank" data-ym-goal-click="footer.social" data-ym-goal-params-click="{'network': '{{ network.title }}', 'url': '{{ network.url }}'}">
                                     <span class="btn-social btn-outline"><i class="fa-{{ network.faFamily | default: 'brands'}} fa-{{ network.icon }}"></i></span>
                                     <span class="btn-social-title">{{ network.title }}</span>
                                 </a>
@@ -48,9 +48,9 @@
                     <p>{{ site.credits }}</p> -->
                     <ul>
                         
-                        <li><a href="privacy_policy.html" target="_blank">Политика конфиденциальности</a></li>
-                        <li><a href="terms_of_service.html" target="_blank">Пользовательское соглашение</a></li>
-                        <li><a href="cookies_policy.html" target="_blank">Политика файлов cookie</a></li>
+                        <li><a href="privacy_policy.html" target="_blank" data-ym-goal-click="footer.policy" data-ym-goal-params-click="{'target': 'privacy_policy'}">Политика конфиденциальности</a></li>
+                        <li><a href="terms_of_service.html" target="_blank" data-ym-goal-click="footer.policy" data-ym-goal-params-click="{'target': 'terms_of_service'}">Пользовательское соглашение</a></li>
+                        <li><a href="cookies_policy.html" target="_blank" data-ym-goal-click="footer.policy" data-ym-goal-params-click="{'target': 'cookies_policy'}">Политика файлов cookie</a></li>
                     </ul>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <div class="scroll-top page-scroll visible-xs visible-sm">
-    <a class="btn btn-primary" href="#page-top">
+    <a class="btn btn-primary" href="#page-top" data-ym-goal-click="footer.scroll-top">
         <i class="fas fa-chevron-up"></i>
     </a>
 </div>

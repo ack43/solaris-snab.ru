@@ -18,3 +18,5 @@
 {% include css/contact.css %}
 {% include css/certificates.css %}
 {% include css/footer.css %}
+
+{% include css/cookie-banner.css %}
