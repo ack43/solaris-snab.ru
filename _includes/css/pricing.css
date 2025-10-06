@@ -85,7 +85,7 @@
 }
 
 #pricing .pricing-row .company-logo {
-	max-width: 150px;
+	max-width: 100px;
 }
 @media screen and (max-width: 768px) {
 	#pricing .pricing-row {

@@ -47,8 +47,8 @@
       const header = rows[1];
       let html = `
         <article class="card pricing-row pricing-header">
-          <div class="oil-type">${header[0]}</div>
           <div class="oil-brand">${header[1]}</div>
+          <div class="oil-type">${header[0]}</div>
           <div class="price">
             <div class="price-volume">${header[3]}</div>
             <div class="price-weight">${header[4]}</div>
@@ -68,15 +68,17 @@
           oilPrice = escapeForJs(oilPrice);
 
           let logo = rowData[2] || '';
-          let logoBlock = `<div class="oil-brand-logo">${logo ? `<img class='company-logo' src="${logo}" alt="${rowData[0]}" />` : ''}</div>`;
+          let logoBlock = `<div class="oil-brand-logo">
+            ${logo ? `<img class='company-logo' src="${logo}" alt="${rowData[0]}" title="${rowData[0]}" />` : ''}
+          </div>`;
 
           html += `
             <article class="card pricing-row pricing-data">
-              <div class="oil-type">${rowData[0] || ''}</div>
               <div class="oil-brand">
                 <div class="oil-brand-name">${rowData[1] || ''}</div>
                 ${logoBlock}
               </div>
+              <div class="oil-type">${rowData[0] || ''}</div>
               <div class="price">
                 <div class="price-volume" title='${header[3]}'>${rowData[3] || ''}</div>
                 <div class="price-weight" title='${header[4]}'>${rowData[4] || ''}</div>
@@ -177,6 +179,29 @@
     if (field !== '' || row.length > 0) { row.push(field); rows.push(row); }
     return rows;
   }
+  ///
+  ///
+  ///
+  ///
+  const footerIframe = document.querySelector('[name=ya-form-68d39c0b02848f8d056657e8]');
+  footerIframe.onload = () => {
+    if (footerIframe.dataset.originalHeight) return;
+
+    const checkInterval = setInterval(() => {
+      const currentHeight = footerIframe.style.height;
+
+      if (currentHeight && currentHeight !== '0px') {
+        clearInterval(checkInterval);
+
+        const height = parseInt(currentHeight);
+        footerIframe.dataset.originalHeight = currentHeight;
+        footerIframe.style.height = `${height - 60}px`;
+
+        // console.log('Adjusted iframe height:', footerIframe.style.height);
+      }
+    }, 100); // checks every 100ms
+  };
+
 })();
 
 ///
@@ -244,4 +269,5 @@ function requestOffer(name, price, button) {
   // Set src AFTER binding events
   iframe.src = iframeMobile.src = url;
 }
+
 

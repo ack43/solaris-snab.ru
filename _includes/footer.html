@@ -3,14 +3,27 @@
     <div class="footer-above">
         <div class="container">
             <div class="row">
-                <div class="footer-col col-md-4" id='location-col'>
+                <!-- <div class="footer-col col-md-4" id='location-col'>
                     <h3>{{ site.footer.location }}</h3>
                     <p>
                         {% for adress in site.address %}
                                            {% endfor %}         {{ adress.line }} <br>
 
                     </p>
+                </div> -->
+                <div class="footer-col col-md-4" id='location-col'>
+                    <!-- <h3>Заказать звонок</h3> -->
+                    <div>
+                        <script src="https://forms.yandex.ru/_static/embed.js"></script>
+                        <iframe 
+                            src="https://forms.yandex.ru/cloud/68d39c0b02848f8d056657e8?iframe=1" 
+                            frameborder="0" 
+                            name="ya-form-68d39c0b02848f8d056657e8" 
+                            width="310"
+                        ></iframe>
+                    </div>
                 </div>
+                
                 <div class="footer-col col-md-4" id='social-col'>
                     <h3>{{ site.footer.social }}</h3>
                     <ul class="list-inline">
