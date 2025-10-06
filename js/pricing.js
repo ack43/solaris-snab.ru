@@ -69,13 +69,14 @@
 
           let logo = rowData[2] || '';
           let logoBlock = `<div class="oil-brand-logo">
-            ${logo ? `<img class='company-logo' src="${logo}" alt="${rowData[0]}" title="${rowData[0]}" />` : ''}
+            ${logo ? `<img class='company-logo' src="${logo}" alt="${rowData[1]}" title="${rowData[1]}" />` : ''}
           </div>`;
+          let companyNameBlock = logo ? '' : `<div class="oil-brand-name">${rowData[1] || ''}</div>`;
 
           html += `
             <article class="card pricing-row pricing-data">
               <div class="oil-brand">
-                <div class="oil-brand-name">${rowData[1] || ''}</div>
+                ${companyNameBlock}
                 ${logoBlock}
               </div>
               <div class="oil-type">${rowData[0] || ''}</div>

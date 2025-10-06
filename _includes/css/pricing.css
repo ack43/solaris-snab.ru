@@ -68,15 +68,20 @@
 
 #pricing .pricing-row .oil-type {
   font-weight: bold;
+	padding: 5px 10px;
 }
 
 #pricing .pricing-row .oil-brand {
   color: var(--muted-color);
   font-size: 0.9em;
+	padding: 5px 10px;
 }
 
 #pricing .pricing-header .price {
 	margin: 0px auto;
+}
+#pricing .pricing-data .price {
+	padding: 5px 10px;
 }
 #pricing .pricing-row .price-volume,
 #pricing .pricing-row .price-weight {
