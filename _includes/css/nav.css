@@ -164,3 +164,12 @@ nav.navbar .phone-link:hover {
 /* .navbar-solaris .container {
   width: 100%;
 } */
+
+
+.navbar-collapse.collapsing {
+  overflow: hidden !important;
+}
+
+.desktop-phone-link {
+  padding-right: 20px;
+}
