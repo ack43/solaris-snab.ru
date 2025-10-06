@@ -135,3 +135,22 @@
     border-radius:6px; 
   }
 }
+
+
+
+@media (max-width: 768px) {
+  .fuel-title, .fuel-description {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+  br.visible-xs {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  br.visible-xs {
+    display: none;
+  }
+}
