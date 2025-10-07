@@ -9,4 +9,6 @@ _site
 
 tmp/
 
+.wakatime-project
+
 # Gemfile.lock
