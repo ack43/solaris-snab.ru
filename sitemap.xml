@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home page -->
+  <url>
+    <loc>https://solaris-snab.ru/</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Policies -->
+  <url>
+    <loc>https://solaris-snab.ru/privacy_policy.html</loc>
+    <lastmod>2025-10-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://solaris-snab.ru/terms_of_service.html</loc>
+    <lastmod>2025-10-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://solaris-snab.ru/cookies_policy.html</loc>
+    <lastmod>2025-10-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Optional: Certificates PDFs -->
+  <url>
+    <loc>https://solaris-snab.ru/assets/certificates/files/ai-92-k5-slavneft.pdf</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://solaris-snab.ru/assets/certificates/files/ai-92-k5-taneko.pdf</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://solaris-snab.ru/assets/certificates/files/ai-95-k5-slavneft.pdf</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://solaris-snab.ru/assets/certificates/files/ai-95-k5-taneko.pdf</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://solaris-snab.ru/assets/certificates/files/dt-l-k5-slavneft.pdf</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://solaris-snab.ru/assets/certificates/files/dt-l-k5-taneko.pdf</loc>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
