@@ -196,7 +196,7 @@
 
         const height = parseInt(currentHeight);
         footerIframe.dataset.originalHeight = currentHeight;
-        footerIframe.style.height = `${height - 60}px`;
+        footerIframe.style.height = `${height - 40}px`;
 
         // console.log('Adjusted iframe height:', footerIframe.style.height);
       }
