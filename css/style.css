@@ -1,0 +1,84 @@
+
+/* shared */
+
+/* body section {
+	padding: 30px 0;
+} */
+
+/* nav */
+
+nav.navbar .navbar-nav {
+  margin: 0;    /* remove default margin */
+}
+
+/* Bootstrap 4/5 example */
+.phone-mobile {
+  display: none;
+}
+
+.phone-desktop {
+  display: inline;
+  font-size: 14px;
+}
+
+@media (max-width: 1200) {
+  .phone-mobile {
+    display: inline;
+  font-size: 14px;
+  }
+  .phone-desktop {
+    display: none;
+  }
+}
+
+
+/* about */
+
+/* #about {
+  height: 700px;
+}
+#about h2 {
+	margin-top: 25px;
+} */
+
+/* yandex forms */
+
+/* By default: show desktop, hide mobile */
+.desktop { display: block; text-align: center; }
+.mobile { display: none; text-align: center; }
+
+@media (max-width: 768px) {
+  /* On mobile: show mobile, hide desktop */
+  .desktop { display: none; }
+  .mobile { display: block; }
+}
+
+
+
+/* modals */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}

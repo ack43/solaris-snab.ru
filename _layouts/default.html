@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    {% if site.blocks.head %}
+    {% include head.html %}
+    {% endif %}
+    <body id="page-top" class="index">
+
+    <main class="main-content">
+        {{ content }}
+    </main>
+
+
+    {% if site.blocks.footer %}
+    {% include footer.html %}
+    {% endif %}
+    
+    {% include cookie-banner.html %}
+
+    {% if site.blocks.modals %}
+    {% include modals.html %}
+    {% endif %}
+
+    {% if site.blocks.js %}
+    {% include js.html %}
+    {% endif %}
+
+    {% include tracking-scripts.html %}
+    </body>
+</html>

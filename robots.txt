@@ -1,2 +1,11 @@
+# Allow all crawlers to access the site
 User-agent: *
-Disallow: /
+Disallow: /assets/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /forms/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://solaris-snab.ru/sitemap.xml

@@ -1,0 +1,20 @@
+#contact {
+    width: 100%;
+    background-color: #{{ site.color.primary }};
+    color: #{{ site.color.secondary }};
+}
+
+
+#contact .contact-heading {
+    font-weight: 700;
+    color: #{{ site.color.secondary }};
+    text-align: center;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+#contact footer, .Footer_iframe {
+    display: none;
+}

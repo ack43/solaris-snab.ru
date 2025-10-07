@@ -1,0 +1,24 @@
+<div id="cookie-banner" class="cookie-banner" style="display:none;">
+  <p>
+    Мы используем файлы cookies, чтобы сделать сайт удобнее и улучшить работу сервиса.
+    Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy_policy" target="_blank">Политикой конфиденциальности</a>.
+  </p>
+  <button id="cookie-accept">Понятно</button>
+</div>
+
+<script>
+(function() {
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const consentKey = 'cookiesAccepted';
+
+  if (!localStorage.getItem(consentKey)) {
+    banner.style.display = 'flex';
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem(consentKey, 'true');
+    banner.style.display = 'none';
+  });
+})();
+</script>

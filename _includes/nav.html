@@ -1,0 +1,49 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top navbar-solaris">
+  <!-- <div class="container"> -->
+    <!-- Brand and toggle -->
+    <div class="navbar-header page-scroll">
+
+      <!-- Toggle button for collapsed menu -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <!-- Mobile phone link -->
+      <a class="phone-link mobile-phone-link navbar-text visible-xs-inline-block" href="{{ site.phoneLink }}" data-ym-goal-click="nav.phone" data-ym-goal-params-click="{'target': 'mobile'}">
+        📞 {{ site.phone }}
+      </a>
+
+
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#page-top" data-ym-goal-click="nav.page-top" >
+        <!-- <img src="/assets/images/logo.png" alt="{{ site.title }}" style="height:40px;"> -->
+        <img src="/assets/images/logo2.jpg" alt="{{ site.title }}">
+        <!-- Optional: site title text for mobile -->
+        <span class="site-title-block visible-xs-inline" >{{ site.textTitle }}</span>
+      </a>
+    </div>
+
+    <!-- Collapsible menu -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="hidden"><a href="#page-top"></a></li>
+        <li class="page-scroll"><a href="#fuel" data-ym-goal-click="nav.fuel">О компании</a></li>
+        <li class="page-scroll"><a href="#pricing" data-ym-goal-click="nav.pricing">Продукция</a></li>
+        <li class="page-scroll"><a href="#contact" data-ym-goal-click="nav.yandexForm">Оставить заявку</a></li>
+        <li class="page-scroll"><a href="#certificates" data-ym-goal-click="nav.certificates">Сертификаты</a></li>
+        <!-- <li class="page-scroll"><a href="#footer" data-ym-goal-click="nav.contact">Контакты</a></li> -->
+      </ul>
+
+      <!-- Desktop phone link -->
+      <div class="navbar-right">
+        <a class="phone-link desktop-phone-link navbar-text" href="{{ site.phoneLink }}" data-ym-goal-click="nav.phone" data-ym-goal-params-click="{'target': 'desktop'}">
+          📞 {{ site.phone }}
+        </a>
+      </div>
+    </div>
+  <!-- </div> -->
+</nav>

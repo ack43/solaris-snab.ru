@@ -1,10 +1,14 @@
-.vscode/
-.wakatime-project
+.DS_Store
 
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-vendor
 
-tmps
+.github
+
+tmp/
+
+.wakatime-project
+
+# Gemfile.lock

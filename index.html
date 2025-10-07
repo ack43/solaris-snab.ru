@@ -1,47 +1,49 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт в разработке</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #f0f0f0;
-            text-align: center;
-        }
+---
+layout: default
+---
 
-        h1 {
-            font-size: 2.5em;
-            color: #222;
-        }
+{% if site.blocks.nav %}
+{% include nav.html %}
+{% endif %}
 
-        p {
-            font-size: 1.2em;
-            color: #666;
-            max-width: 90%;
-        }
+{% if site.blocks.header %}
+{% include header.html %}
+{% endif %}
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
+{% if site.blocks.cta %}
+{% include cta.html %}
+{% endif %}
 
-            p {
-                font-size: 1em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>Сайт в разработке</h1>
-    <p>Мы работаем над созданием сайта <strong>solaris-snab.ru</strong>. Пожалуйста, зайдите позже.</p>
-</body>
-</html>
+{% if site.blocks.about %}
+{% include about.html %}
+{% endif %}
+
+{% if site.blocks.pricing %}
+{% include pricing.html %}
+{% endif %}
+
+{% if site.blocks.reasons %}
+{% include reasons.html %}
+{% endif %}
+
+
+
+{% if site.blocks.yandex_form %}
+{% include yandex-form.html %}
+{% endif %}
+
+{% if site.blocks.certificates %}
+{% include certificates.html %}
+{% endif %}
+
+{% if site.blocks.portfolio_grid %}
+{% include portfolio_grid.html %}
+{% endif %}
+
+{% if site.blocks.contact %}
+{% if site.contact == "yandex" %}
+{% include yandex-form.html %}
+{% else %}
+{% include contact.html %}
+{% endif %}
+{% endif %}

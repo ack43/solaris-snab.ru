@@ -1,0 +1,19 @@
+<!-- certificates -->
+<section id="certificates">
+<div class="container">
+  <h2>Сертификаты</h2>
+  <p>Мы предоставляем паспорта качества и сертификаты от НПЗ</p>
+
+  <div class="certificates-row">
+    {% for cert in site.certificates %}
+      <article class="card">
+        <a href="{{ cert.image }}" class="cert-lightbox" data-ym-goal-click="certificate">
+          <img src="{{ cert.thumb }}" alt="{{ cert.title }}">
+        </a>
+        <h3>{{ cert.title }}</h3>
+        <a href="{{ cert.file }}" download class="contrast button small" data-ym-goal-click="certificate-donwload">Скачать</a>
+      </article>
+    {% endfor %}
+  </div>
+</div>
+</section>

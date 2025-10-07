@@ -1,0 +1,26 @@
+<!-- pricing -->
+<section 
+  id="pricing" 
+  data-sheet-url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSnPV97PYF-hErXqrH9v2tl3xrgHfpoWlYgx0KIK8wiSk5QHwiHffdStwgtX1G6g-8w35VC35th869S/pub?gid=0&single=true&output=csv"
+>
+<div class="container">
+  <header class="pricing-header">
+    <h2>Актуальные цены</h2>
+    <button 
+      onclick="fetchPricing(true)" 
+      id="priceUpdater" 
+      class="secondary"
+    >
+      🔄 Обновить
+    </button>
+  </header>
+
+  <p id="pricing-update-ts" class="pricing-update">
+    Обновление не загружено
+  </p>
+
+  <div id="pricing-table" class="grid">Загрузка...</div>
+  <!-- <div class="loader-svg"></div> -->
+  <object class="loader-svg" type="image/svg+xml" data="/assets/pricing-loader.svg"></object>
+</div>
+</section>

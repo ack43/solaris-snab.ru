@@ -1,0 +1,101 @@
+footer {
+  color: #{{ site.color.secondary-dark }};
+  background-color: #{{ site.color.primary }};
+  padding: 5px 15px;
+}
+footer .footer-col {
+  color: #{{ site.color.secondary }};
+}
+
+footer .footer-above .row #social-col ul > li {
+  display: inline-block;
+  font-size: 2em;
+}
+footer .footer-above .row #social-col ul > li a {
+  color: #{{ site.color.secondary-dark }};
+}
+footer .footer-above .row #social-col ul > li a:hover {
+  color: #{{ site.color.secondary }};
+  text-decoration: none;
+}
+
+footer .footer-above .row #social-col ul > li .btn-social-title {
+  display: none; 
+}
+
+/* Tablet + Mobile: stack items and show titles */
+@media screen and (max-width: 992px) {
+  footer .footer-above .row #social-col {
+    width: 100%;
+  }
+  footer .footer-above .row #social-col ul > li {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+  }
+  footer .footer-above .row #social-col ul > li .btn-social-title {
+    display: inline-block;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer-above .row #social-col ul > li {
+    display: block;
+  }
+}
+
+#policy-col {
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: #{{ site.color.primary-grey }};
+}
+
+#policy-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#policy-col ul li a {
+  padding: 5px;
+  color: #{{ site.color.primary-grey }};
+  font-size: 1.2em;
+  line-height: 2em;
+  text-decoration: none;
+}
+
+#policy-col ul li a:hover {
+  text-decoration: underline;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+
+#request-call-col {
+  margin-top: 0px;
+}
+
+[name=ya-form-68d39c0b02848f8d056657e8] {
+  max-height: 240px !important;
+}
+
+
+
+/* Sticky footer setup */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Make main content grow to push footer down */
+main, .main-content, #content {
+  flex: 1;
+}

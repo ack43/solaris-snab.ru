@@ -1,0 +1,131 @@
+# Site settings
+title: Солярис — Поставка топлива и ГСМ напрямую от НПЗ
+textTitle: solaris-snab.ru
+email:  snab@solaris-snab.ru
+url: solaris-snab.ru
+description: "ООО «Солярис» — комплексный поставщик дизельного и других видов топлива для предприятий. Поставка топлива оптом от 20 тонн точно в срок, с гарантией качества и прозрачными ценами."
+keywords: "топливо, дизельное топливо, ГСМ, оптовая поставка топлива, поставка топлива от НПЗ, Солярис, нефтепродукты, АИ-92, АИ-95, ДТ"
+# skills: "Web Developer - Graphic Artist - User Experience Designer"
+# meta_author: LastName FirstName
+
+phone: +7 963 430 60 02
+phoneLink: tel:+9634306002
+
+########
+########
+########
+# Google webmaster tools
+google_verify:
+
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+yandex_verify: 01746633aa188d4f
+
+# Analytics / ads IDs
+yandex_metrika_id: "104400248"   # Your Metrika counter ID
+## yandex_ads_id: "R-A-123456-7"   # Optional: Yandex Ads ID
+########
+########
+########
+
+
+# Contact form:
+# - yandex : pass through yandex forms
+# - static : pass through formspree.io to validate email sending
+# - disqus : replace contact form by disqus thread
+# - comment the line below if you want to stick with the default PHP contact form
+contact: static
+
+blocks:
+  head: true
+  nav: true
+  header: false # replaced with about block
+  cta: true
+  about: true
+  pricing: true
+  reasons: true
+  # yandex_form: false # cause of contact: yandex
+  yandex_form: true
+  certificates: true
+  portfolio_grid: false
+  contact: false
+  footer: true
+  modals: true
+  js: true
+
+# # If you use disqus you need disqus shortname
+# # https://help.disqus.com/customer/portal/articles/466208
+# disqus_shortname: myshortname
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  # Primary — industrial dark (charcoal/graphite instead of teal)
+  primary: 212121
+  primary-rgb: "33,33,33"
+  primary-grey: 414141
+
+  # Secondary — muted warm orange (unchanged)
+  secondary: d07a2f
+
+  # Secondary-dark — darker orange/brown for hover/depth
+  secondary-dark: 8c4f1e
+
+  ########
+  blacky1: 121212
+  blacky2: 1a1a1a
+
+# Footer settings
+footer:
+  copyright: solaris-snab.ru
+  location: Kirov
+  social: solaris-snab.ru
+  # credits: Credits
+  email: kraevin@solaris-snab.ru
+  sales_email: sales@solaris-snab.ru
+
+# # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+
+social:
+  - faFamily: solid
+    icon: globe
+    title: solaris-snab.ru
+    url: https://solaris-snab.ru
+# social:
+#   - title: twitter
+#     url: http://twitter.com/jekyllrb
+#   - title: facebook
+#     url:
+#   - title: stack-overflow
+#     url: http://stackoverflow.com/questions/tagged/jekyll
+#   - title: bitbucket
+#     url: http://bitbucket.org/jekyll
+#   - title: github
+#     url: http://github.com/jekyll
+
+# Postal address (add as many lines as necessary) 
+address:
+  - line: Kirov
+  - line: somewhere
+
+# # Credits content
+# credits: 'credits for solaris-snab.ru'
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+collections:
+  certificates:
+    output: false
+
+# #for posts
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       permalink: ""
+
+plugins:
+  - jekyll-minifier

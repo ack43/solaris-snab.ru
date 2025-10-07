@@ -1,0 +1,164 @@
+/*!
+ * Base styles
+ */
+
+/* Reset / basic layout */
+body {
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #{{ site.color.blacky1 }} 0%, #{{ site.color.blacky2 }} 100%);
+}
+
+p {
+    font-size: 20px;
+}
+
+p.small {
+    font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+    color: #{{ site.color.primary }};
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+hr.star-light,
+hr.star-primary {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 5px;
+    text-align: center;
+    overflow: visible;
+}
+
+hr.star-light:after,
+hr.star-primary:after {
+    content: "\f005";
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 2em;
+}
+
+hr.star-light {
+    border-color: #fff;
+}
+
+hr.star-light:after {
+    color: #fff;
+    background-color: #{{ site.color.primary }};
+}
+
+hr.star-primary {
+    border-color: #{{ site.color.secondary }};
+}
+
+hr.star-primary:after {
+    color: #{{ site.color.secondary }};
+    background-color: #fff;
+}
+
+/* Images */
+.img-centered {
+    margin: 0 auto;
+}
+
+/* Buttons common */
+.btn:focus,
+.btn:active,
+.btn.active {
+    outline: 0;
+}
+
+/* Scroll top button */
+.scroll-top {
+    z-index: 1049;
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    width: 50px;
+    height: 50px;
+}
+
+.scroll-top .btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 28px;
+    color: #{{ site.color.blacky1 }};
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* added shadow */
+
+    display: flex;            /* enable flex */
+    align-items: center;      /* vertical centering */
+    justify-content: center;  /* horizontal centering */
+    text-align: center;       /* fallback */
+}
+
+.scroll-top .btn:focus {
+    outline: 0;
+}
+
+/* Navbar general */
+.navbar {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.navbar a:focus {
+    outline: 0;
+}
+
+.navbar .navbar-nav {
+    letter-spacing: 1px;
+}
+
+.navbar .navbar-nav li a:focus {
+    outline: 0;
+}
+
+.navbar-default,
+.navbar-inverse {
+    border: 0;
+}
+
+/* Sections common */
+section {
+    padding: 100px 0;
+}
+
+@media(max-width:767px) {
+    section {
+        padding: 75px 0;
+    }
+
+    section.first {
+        padding-top: 75px;
+    }
+}
+
+/* Containers */
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
