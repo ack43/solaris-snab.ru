@@ -1,10 +1,13 @@
 (function() {
   let firstLoad = true;
   let pricingFetched = false;
+  let loaderSVG;
   const oilAnim = document.getElementById("oilWaveRise");
 
   function fetchPricing(isButtonClick = false) {
     if(isButtonClick) resetTankAnimation();
+
+    
 
     const section = document.getElementById("pricing");
     if (!section) return console.error("No pricing section found");
@@ -16,8 +19,8 @@
     const priceUpdater = section.querySelector("#priceUpdater");
     const h2 = section.querySelector('h2');
     const pricingTable = section.querySelector("#pricing-table");
-    const loaderSVG = section.querySelector(".loader-svg");
-
+    loaderSVG = section.querySelector(".loader-svg");
+    
     if (loaderSVG) {
       if (h2) h2.classList.add('hidden');
       loaderSVG.classList.remove('hidden');
@@ -111,7 +114,15 @@
           finishTankAnimation();
 
           // show table after short delay (0.4s)
-          setTimeout(() => showPricingTable(csv), 400);
+
+          loaderSVG.style.transition = 'transform 600ms ease, opacity 600ms ease';
+          setTimeout(() => {
+            // if (h2) h2.classList.remove('hidden');
+            loaderSVG.style.transform = `translateX(-${loaderSVG.offsetWidth*3}px)`;
+            loaderSVG.style.opacity = '0';
+            setTimeout(() => showPricingTable(csv), 400);
+          }, 50); // 50ms delay
+          
         })
         .catch(err => {
           pricingTable.classList.add("loading-error");
@@ -123,8 +134,8 @@
     };
 
     if (firstLoad) {
-      const delay = 20 + Math.random() * 10;
-      // const delay = 2000 + Math.random() * 1000;
+      // const delay = 20 + Math.random() * 10;
+      const delay = 2000 + Math.random() * 1000;
       setTimeout(doFetch, delay);
     } else {
       doFetch();
@@ -156,6 +167,14 @@
   }
 
   function resetTankAnimation() {
+
+    if(loaderSVG){
+      // reset loaderSVG back
+      loaderSVG.style.transition = 'transform 0s ease, opacity 0s ease';
+      loaderSVG.style.transform = 'translateX(0)';
+      loaderSVG.style.opacity = '1';
+    }
+
     if (!oilAnim) return;
     oilAnim.setCurrentTime(0); // reset to empty
     oilAnim.unpauseAnimations();   // allow new animation
