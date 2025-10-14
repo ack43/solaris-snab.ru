@@ -1,6 +1,7 @@
 # Allow all crawlers to access the site
 User-agent: *
-Disallow: /assets/
+Disallow: /assets/fontawesome-free-7.0.1-web
+Disallow: /assets/pricing-loader.svg
 Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
