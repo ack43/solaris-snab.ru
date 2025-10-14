@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" width="600" height="220" role="img" aria-labelledby="title desc">
-  <title id="title">Tank filling animation — Solaris Snab</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-labelledby="title desc">
+  <title id="title">Tank filling animation — solaris-snab.ru</title>
   <desc id="desc">Animated tank with oil level rising and falling from the bottom.</desc>
 
   <!-- Tank outline -->
@@ -12,6 +12,28 @@
   <clipPath id="tank-clip">
     <rect x="26" y="46" width="548" height="128" rx="54" />
   </clipPath>
+  
+   <!-- Platform under the tank -->
+  <rect x="10" y="188" width="580" height="12" rx="6" 
+        fill="#222" stroke="#444" stroke-width="2" />
+
+  <!-- Wheels for platform -->
+  <g id="platform-wheels">
+    <!-- Left pair -->
+    <circle cx="90" cy="222" r="20" fill="#141414" stroke="#444" stroke-width="2" />
+    <circle cx="90" cy="222" r="4" fill="#777" />
+
+    <circle cx="160" cy="222" r="20" fill="#141414" stroke="#444" stroke-width="2" />
+    <circle cx="160" cy="222" r="4" fill="#777" />
+
+    <!-- Right pair -->
+    <circle cx="440" cy="222" r="20" fill="#141414" stroke="#444" stroke-width="2" />
+    <circle cx="440" cy="222" r="4" fill="#777" />
+
+    <circle cx="510" cy="222" r="20" fill="#141414" stroke="#444" stroke-width="2" />
+    <circle cx="510" cy="222" r="4" fill="#777" />
+  </g>
+  
 
   <!-- Oil with animated wave -->
   <g clip-path="url(#tank-clip)">
