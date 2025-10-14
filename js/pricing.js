@@ -123,8 +123,8 @@
     };
 
     if (firstLoad) {
-      const delay = 20 + Math.random() * 10;
-      // const delay = 2000 + Math.random() * 1000;
+      // const delay = 20 + Math.random() * 10;
+      const delay = 20000 + Math.random() * 10000;
       setTimeout(doFetch, delay);
     } else {
       doFetch();
